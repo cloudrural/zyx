@@ -8,6 +8,9 @@ etcdInsufficientMembers
 > Hello Veeru
 
 **Steps:**</br>
+* first
+* second
+
 
 **When to perform the steps:**</br>
 
