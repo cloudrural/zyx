@@ -11,6 +11,11 @@ etcdInsufficientMembers
 * first
 * second
 
+```bash
+$ ./hello so.py
+
+```
+
 
 **When to perform the steps:**</br>
 
