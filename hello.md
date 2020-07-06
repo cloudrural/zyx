@@ -33,13 +33,13 @@ ps -ef
 
 2) Check the actual status of prometheus-alertmanager pod from your cluster using the commands below.
     ```bash
-    kubectl get pods --kubeconfig=<kube-config-file> -n monitoring
+    $ kubectl get pods --kubeconfig=<kube-config-file> -n monitoring
     ```
 b) Get the name of container, from the container section. These can be used to fetch the logs
 
 3) Check the logs of containers:
    ```bash
-   kubectl logs <prometheus-alertmanager-pod> -c alertmanager -kubeconfig=<kube-config-file> -n monitoring
+   $ kubectl logs <prometheus-alertmanager-pod> -c alertmanager -kubeconfig=<kube-config-file> -n monitoring
    ```
 
 4) Check the active configmap for the running instance of alertmanager:
