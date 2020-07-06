@@ -27,3 +27,24 @@ ps -ef
 **When to perform the steps:**</br>
 
 **Any side effects of performing above steps:**</br>
+
+
+1) Determine the name of the cluster from Alert.
+
+2) Check the actual status of prometheus-alertmanager pod from your cluster using the commands below.
+a) `kubectl get pods --kubeconfig=<kube-config-file> -n monitoring`
+b) Get the name of container, from the container section. These can be used to fetch the logs
+
+3) Check the logs of containers:
+
+`kubectl logs <prometheus-alertmanager-pod> -c alertmanager -kubeconfig=<kube-config-file> -n monitoring`
+
+4) Check the active configmap for the running instance of alertmanager:
+kubectl describe configmaps prometheus-alertmanager -kubeconfig=<kube-config-file> -n monitoring
+
+5) The configuration files are stored on PVC (persistent volume claim) - monitoring/prometheus-server. Check if the PVC status is Bound:
+
+`kubectl describe pvc prometheus-server -n monitoring`
+
+6) Try to recreate prometheus-server pod:
+`kubectl delete pod <prometheus-server-pod> -n monitoring`
