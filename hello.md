@@ -13,8 +13,14 @@ etcdInsufficientMembers
 
 ```bash
 $ ./hello so.py
+$ ps -ef
 
 ```
+
+`
+ps -ef
+`
+
 
 
 **When to perform the steps:**</br>
